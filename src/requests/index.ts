@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { Navigate } from "react-router-dom";
 
 const api = axios.create({
     baseURL: "http://localhost:8000/api/",
@@ -16,11 +17,12 @@ interface LoginData {
     password: string;
 }
 
-export const LoginRequisition = (data: LoginData, setError: React.Dispatch<string>) => {
-    api
+export const LoginRequisition = async (data: LoginData, navigate: any, setError: React.Dispatch<string>) => {
+    await api
       .post(`users/login`, data)
-      .then(async (res) => {
+      .then((res) => {
         localStorage.setItem("authToken", res.data.token);
+        navigate('/home');
         window.location.reload();
       })
       .catch(() => setError("login ou senha incorretos"));
