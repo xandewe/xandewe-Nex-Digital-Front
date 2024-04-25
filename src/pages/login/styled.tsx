@@ -17,6 +17,7 @@ export const LoginForm = styled.form`
 export const Input = styled.input`
   margin-bottom: 10px;
   padding: 8px;
+  color: black;
 `;
 
 export const Button = styled.button`
