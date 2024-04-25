@@ -16,8 +16,7 @@ const LoginPage: React.FC = () => {
     const navigate = useNavigate();
 
     const onSubmit = (data: any) => {
-        LoginRequisition(data, setError)
-        navigate('/home');
+        LoginRequisition(data, navigate, setError)
     };
 
     return (
