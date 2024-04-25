@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { Navigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 
 const api = axios.create({
     baseURL: "http://localhost:8000/api/",
@@ -17,7 +17,7 @@ interface LoginData {
     password: string;
 }
 
-export const LoginRequisition = async (data: LoginData, navigate: any, setError: React.Dispatch<string>) => {
+export const LoginRequisition = async (data: LoginData, navigate: NavigateFunction, setError: React.Dispatch<string>) => {
     await api
       .post(`users/login`, data)
       .then((res) => {
