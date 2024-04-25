@@ -8,11 +8,11 @@ import {
   Button,
   ErrorMessage,
 } from './styled';
-import { LoginRequisition } from '../../requests';
+import { LoginRequisition, LoginData } from '../../requests';
 
 const LoginPage: React.FC = () => {
     const [error, setError] = useState<string>('');
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginData>();
     const navigate = useNavigate();
 
     const onSubmit = (data: any) => {
