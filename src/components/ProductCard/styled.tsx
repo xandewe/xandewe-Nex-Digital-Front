@@ -25,11 +25,15 @@ export const Info = styled.div`
 export const Name = styled.h3`
   margin: 0;
   font-size: 16px;
+  color: black;
+  font-weight: bold;
 `;
 
 export const Value = styled.p`
   margin: 5px 0;
   font-size: 14px;
+  color: black;
+  font-weight: bold;
 `;
 
 export const ValuePer = styled.span`
