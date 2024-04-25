@@ -23,10 +23,10 @@ const LoginPage: React.FC = () => {
         <LoginContainer>
         <LoginForm onSubmit={handleSubmit(onSubmit)}>
             <Input {...register('email', { required: true })} placeholder="Email" />
-            {errors.username && <ErrorMessage>This field is required</ErrorMessage>}
             <Input {...register('password', { required: true })} type="password" placeholder="Password" />
-            {errors.password && <ErrorMessage>This field is required</ErrorMessage>}
             <Button type="submit">Login</Button>
+            {errors.email && <ErrorMessage>email is required</ErrorMessage>}
+            {errors.password && <ErrorMessage>password This field is required</ErrorMessage>}
             {error && <ErrorMessage>{error}</ErrorMessage>}
         </LoginForm>
         </LoginContainer>
