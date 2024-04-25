@@ -1,14 +1,14 @@
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: "http://localhost:8000/api/",
 });
 
 const token = localStorage.getItem("authToken");
-const headers = {
+export const headers = {
   headers: {
-    Authorization: `Bearer ${token}`,
+    Authorization: token,
   },
 };
 
