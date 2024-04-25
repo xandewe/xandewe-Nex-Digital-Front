@@ -23,7 +23,6 @@ export const LoginRequisition = async (data: LoginData, navigate: any, setError:
       .then((res) => {
         localStorage.setItem("authToken", res.data.token);
         navigate('/home');
-        window.location.reload();
       })
-      .catch(() => setError("login ou senha incorretos"));
+      .catch(() => setError("email or password invalid"));
 };
