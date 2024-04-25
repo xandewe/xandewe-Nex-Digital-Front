@@ -15,7 +15,7 @@ const LoginPage: React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<LoginData>();
     const navigate = useNavigate();
 
-    const onSubmit = (data: any) => {
+    const onSubmit = (data: LoginData) => {
         LoginRequisition(data, navigate, setError)
     };
 
